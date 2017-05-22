@@ -3,7 +3,13 @@
 function newGame()
 	local object = {
 		state = 0,
+		round = 0,
+		money = 100,
 		turrets = {},
+		deployed = {},
+		selected = {0, 0},
+		gridShow = false,
+		grid = {},
 		screen = {
 			w = love.graphics.getWidth(),
 			h = love.graphics.getHeight()
@@ -20,5 +26,6 @@ function newGame()
 			object.turrets[i][j].color.b = 255 * j / i
 		end
 	end
+
 	return object
 end

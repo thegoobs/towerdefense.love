@@ -10,6 +10,7 @@ require "nav"
 
 function love.load()
 	game = newGame()
+	love.graphics.setNewFont("Lato-Regular.ttf", 15)
 end
 
 function love.update()
@@ -20,4 +21,22 @@ end
 
 function love.draw()
 	drawNav()
+end
+
+function love.mousepressed(x, y, button, istouch)
+	if button == 1 then
+
+		--check for HUD turret selection
+		for i = 1, 3 do
+			for j = 1, 3 do
+				if game.turrets[i][j].hover() then
+					game.selected = {i, j}
+					return
+				end
+			end
+		end
+
+		game.selected = {0,0}
+		--check for deployed turret selection
+	end
 end

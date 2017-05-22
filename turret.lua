@@ -16,8 +16,14 @@ function newTurret()
 		name = "test",
 		cost = 0,
 
-		active = false
+		active = false,
+		selected = false
 	}
+
+	function turret:set(name, cost)
+		turret.name = name
+		turret.cost = cost
+	end
 
 	function turret:hover()
 		local mx = love.mouse.getX()
@@ -30,6 +36,15 @@ function newTurret()
 		end
 
 		return false
+	end
+
+	function turret:select()
+		local mx = love.mouse.getX()
+		local my = love.mouse.getY()
+
+		if love.mouse.isDown("l") then
+
+		end
 	end
 	return turret
 end
