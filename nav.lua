@@ -45,14 +45,7 @@ function drawNav()
 
 	--draw grid for turrets on map
 	if game.selected[1] > 0 and game.selected[2] > 0 then
-		love.graphics.setColor(255, 255, 255, 255 / 2)
-		for i = 1, 10 do
-			for j = 1, 10 do
-				love.graphics.rectangle("fill", 50 * i, 25 + 50 * j, 45, 45)
-			end
-		end
-		love.graphics.setColor(255,255,255,255)
+		grid.active = true
+		grid.draw()
 	end
-
-	love.graphics.print(game.selected[1] .. game.selected[2], 0,0)
 end --drawNav()
